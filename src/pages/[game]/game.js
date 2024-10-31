@@ -7,9 +7,9 @@ export default function GamePage(props) {
   const games = game.data[0];
 
   const wallpaper = games.attributes.wallpaper;
-
+  const urlStrapi2 = "https://ecommerce-backstrapi.up.railway.app";
   const urlStrapi = "http://localhost:1337";
-  const wallpaperUrl = `${urlStrapi}${wallpaper.data.attributes.url}`;
+  const wallpaperUrl = `${urlStrapi2}${wallpaper.data.attributes.url}`;
 
   return (
     <>
