@@ -16,3 +16,70 @@
         }
     }
 }
+
+
+/* Media Queries */
+
+/* Móvil pequeño - hasta 480px */
+@media (max-width: 480px) {
+    .content {
+        flex-direction: column;
+
+        > div {
+            width: 100%;
+            margin: 0 0 10px 0 !important;
+
+            &:nth-child(2),
+            &:last-of-type {
+                margin-left: 0 !important;
+            }
+        }
+    }
+}
+
+/* Móvil grande - hasta 768px */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+
+        > div {
+            width: 100%;
+            margin: 0 0 10px 0 !important;
+
+            &:nth-child(2),
+            &:last-of-type {
+                margin-left: 0 !important;
+            }
+        }
+    }
+}
+
+/* Tablet pequeño - hasta 992px */
+@media (max-width: 992px) {
+    .content {
+        > div {
+            width: 45%;
+            margin: 0 !important;
+
+            &:nth-child(2),
+            &:last-of-type {
+                margin-left: 10px !important;
+            }
+        }
+    }
+}
+
+/* Tablet grande - hasta 1200px */
+@media (max-width: 1200px) {
+    .content {
+        > div {
+            width: 48%;
+            margin: 0 !important;
+
+            &:nth-child(2),
+            &:last-of-type {
+                margin-left: 10px !important;
+            }
+        }
+    }
+}

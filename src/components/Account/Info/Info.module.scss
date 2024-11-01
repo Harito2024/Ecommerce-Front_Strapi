@@ -41,3 +41,101 @@
     color: $text-secondary;
     font-size: 12px;
 }
+
+/* Media Queries */
+
+/* Movil pequeño - hasta 480px */
+@media (max-width: 480px) {
+    .user {
+        height: 70px;
+        width: 70px;
+
+        i {
+            font-size: 30px;
+        }
+    }
+
+    .username {
+        font-size: 18px;
+    }
+
+    .email {
+        font-size: 14px;
+    }
+
+    .createdAt {
+        font-size: 10px;
+    }
+}
+
+/* Movil grande - hasta 768px */
+@media (max-width: 768px) {
+    .user {
+        height: 80px;
+        width: 80px;
+
+        i {
+            font-size: 40px;
+        }
+    }
+
+    .username {
+        font-size: 22px;
+    }
+
+    .email {
+        font-size: 16px;
+    }
+
+    .createdAt {
+        font-size: 11px;
+    }
+}
+
+/* Tablet pequeño - hasta 992px */
+@media (max-width: 992px) {
+    .user {
+        height: 90px;
+        width: 90px;
+
+        i {
+            font-size: 45px;
+        }
+    }
+
+    .username {
+        font-size: 25px;
+    }
+
+    .email {
+        font-size: 18px;
+    }
+
+    .createdAt {
+        font-size: 12px;
+    }
+}
+
+/* Tablet grande - hasta 1200px */
+@media (max-width: 1200px) {
+    .user {
+        height: 95px;
+        width: 95px;
+
+        i {
+            font-size: 48px;
+        }
+    }
+
+    .username {
+        font-size: 27px;
+    }
+
+    .email {
+        font-size: 19px;
+    }
+
+    .createdAt {
+        font-size: 12px;
+    }
+}
