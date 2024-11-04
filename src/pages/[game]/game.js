@@ -10,6 +10,7 @@ export default function GamePage(props) {
   const urlStrapi2 = "https://ecommerce-backstrapi.up.railway.app";
   const urlStrapi = "http://localhost:1337";
   const wallpaperUrl = `${urlStrapi2}${wallpaper.data.attributes.url}`;
+  const screenshots = `${urlStrapi2}${games.attributes.screenshots.data}`;
 
   return (
     <>
@@ -25,10 +26,7 @@ export default function GamePage(props) {
         <Game.Info game={games.attributes} />
         <Separator height={30} />
 
-        <Game.Media
-          video={games.attributes.video}
-          screenshots={games.attributes.screenshots.data}
-        />
+        <Game.Media video={games.attributes.video} screenshots={screenshots} />
         <Separator height={50} />
       </BasicLayout>
     </>

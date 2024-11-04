@@ -19,9 +19,10 @@ export function Panel(props) {
     }, 500);
   };
 
+  const urlStrapi2 = "https://ecommerce-backstrapi.up.railway.app";
   const urlStrapi = "http://localhost:1337";
-  const cover = `${urlStrapi}${game.cover.data.attributes.url}`;
-  const icon = `${urlStrapi}${game.platform.data.attributes.icon.data.attributes.url}`;
+  const cover = `${urlStrapi2}${game.cover.data.attributes.url}`;
+  const icon = `${urlStrapi2}${game.platform.data.attributes.icon.data.attributes.url}`;
   const platform = game.platform.data;
   const buyPrice = fn.calcDiscountedPrice(game.price, game.discount);
 

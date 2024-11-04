@@ -8,12 +8,13 @@ import { useState } from "react";
 export function Gallery(props) {
   const { screenshots } = props;
   const [show, setShow] = useState(false);
+  const urlStrapi2 = "https://ecommerce-backstrapi.up.railway.app";
   const urlStrapi = "http://localhost:1337";
 
   const screenshotsClone = [...screenshots];
 
   const principalImage = screenshotsClone.shift();
-  const principalImageUrl = `${urlStrapi}${principalImage.attributes.url}`;
+  const principalImageUrl = `${urlStrapi2}${principalImage.attributes.url}`;
 
   const onOpenClose = () => setShow((prevState) => !prevState);
 
@@ -25,7 +26,9 @@ export function Gallery(props) {
     slidesToScroll: 1,
     arrows: false,
     customPaging: function (index) {
-      return <Image src={`${urlStrapi}${screenshots[index].attributes.url}`} />;
+      return (
+        <Image src={`${urlStrapi2}${screenshots[index].attributes.url}`} />
+      );
     },
   };
 
@@ -40,7 +43,7 @@ export function Gallery(props) {
           {map(screenshotsClone, (screenshots) => (
             <div key={screenshots.id}>
               <Image
-                src={`${urlStrapi}${screenshots.attributes.url}`}
+                src={`${urlStrapi2}${screenshots.attributes.url}`}
                 onClick={onOpenClose}
               />
             </div>
@@ -52,7 +55,7 @@ export function Gallery(props) {
           <Slider {...settings}>
             {map(screenshots, (screenshots) => (
               <div key={screenshots.id}>
-                <Image src={`${urlStrapi}${screenshots.attributes.url}`} />
+                <Image src={`${urlStrapi2}${screenshots.attributes.url}`} />
               </div>
             ))}
           </Slider>
