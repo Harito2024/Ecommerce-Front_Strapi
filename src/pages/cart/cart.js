@@ -1,8 +1,8 @@
-import { CartLayout } from "@/layouts";
-import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { useCart } from "@/hooks";
+import { useRouter } from "next/router";
 import { Game } from "@/api";
+import { CartLayout } from "@/layouts";
+import { useCart } from "@/hooks";
 import { Cart } from "@/components/Cart";
 import { Seo } from "@/components/Shared";
 
@@ -14,9 +14,7 @@ export default function CartPage() {
   } = useRouter();
 
   const currentStep = Number(step);
-
-  const [games, setGames] = useState(null);
-
+  const [games, setGames] = useState();
   const { cart } = useCart();
 
   useEffect(() => {

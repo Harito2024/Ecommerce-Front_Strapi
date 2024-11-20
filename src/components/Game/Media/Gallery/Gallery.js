@@ -7,16 +7,14 @@ import { useState } from "react";
 
 export function Gallery(props) {
   const { screenshots } = props;
+  const onOpenClose = () => setShow((prevState) => !prevState);
+
+  const screenshotsClone = [...screenshots];
+  const principalImage = screenshotsClone.shift();
+
   const [show, setShow] = useState(false);
   const urlStrapi2 = "https://ecommerce-backstrapi.up.railway.app";
   const urlStrapi = "http://localhost:1337";
-
-  const screenshotsClone = [...screenshots];
-
-  const principalImage = screenshotsClone.shift();
-  const principalImageUrl = `${urlStrapi2}${principalImage.attributes.url}`;
-
-  const onOpenClose = () => setShow((prevState) => !prevState);
 
   const settings = {
     dots: true,
@@ -26,9 +24,7 @@ export function Gallery(props) {
     slidesToScroll: 1,
     arrows: false,
     customPaging: function (index) {
-      return (
-        <Image src={`${urlStrapi2}${screenshots[index].attributes.url}`} />
-      );
+      return <Image src={`${urlStrapi}${screenshots[index].attributes.url}`} />;
     },
   };
 
@@ -36,14 +32,17 @@ export function Gallery(props) {
     <>
       <div className={styles.gallery}>
         <div className={styles.principal}>
-          <Image src={principalImageUrl} onClick={onOpenClose} />
+          <Image
+            src={`${urlStrapi}${principalImage.attributes.url}`}
+            onClick={onOpenClose}
+          />
         </div>
 
         <div className={styles.grid}>
           {map(screenshotsClone, (screenshots) => (
             <div key={screenshots.id}>
               <Image
-                src={`${urlStrapi2}${screenshots.attributes.url}`}
+                src={`${urlStrapi}${screenshots.attributes.url}`}
                 onClick={onOpenClose}
               />
             </div>
@@ -53,9 +52,9 @@ export function Gallery(props) {
       <FullModal show={show} onClose={onOpenClose}>
         <div className={styles.carouselContainer}>
           <Slider {...settings}>
-            {map(screenshots, (screenshots) => (
-              <div key={screenshots.id}>
-                <Image src={`${urlStrapi2}${screenshots.attributes.url}`} />
+            {map(screenshots, (screenshot) => (
+              <div key={screenshot.id}>
+                <Image src={`${urlStrapi}${screenshot.attributes.url}`} />
               </div>
             ))}
           </Slider>

@@ -8,7 +8,7 @@ import { Seo } from "@/components/Shared";
 export default function SingUpPage() {
   return (
     <>
-      <Seo title="Crear una Cuanta" />
+      <Seo title="Crear una Cuenta" />
       <JoinLayout>
         <div className={styles.singUp}>
           <h3>Crear Cuenta</h3>

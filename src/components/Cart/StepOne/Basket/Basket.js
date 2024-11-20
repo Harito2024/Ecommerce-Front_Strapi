@@ -15,7 +15,7 @@ export function Basket(props) {
     const number = index + 1;
     return { key: number, text: String(number), value: number };
   });
-
+  console.log(props);
   return (
     <div className={styles.basket}>
       <h2>Cesta</h2>

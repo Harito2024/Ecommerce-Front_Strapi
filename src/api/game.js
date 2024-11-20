@@ -81,17 +81,18 @@ export class Game {
       const filter = `filters[slug][$eq]=${slug}`;
       const populateGame =
         "populate[0]=wallpaper&populate[1]=cover&populate[2]=screenshots&populate[3]=platform";
+
       const populatePlatform = "populate[4]=platform.icon";
       const populates = `${populateGame}&${populatePlatform}`;
 
       const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}?${filter}&${populates}`;
 
-      const response = await fetch([url]);
-      const result = response.json();
+      const response = await fetch(url);
+      const result = await response.json();
 
       if (response.status !== 200) throw result;
 
-      return result;
+      return result.data[0];
     } catch (error) {
       throw error;
     }
@@ -104,7 +105,7 @@ export class Game {
       const url = `${ENV.API_URL}/${ENV.ENDPOINTS.GAME}/${id}?${populate}`;
 
       const response = await fetch(url);
-      const result = response.json();
+      const result = await response.json();
 
       if (response.status !== 200) throw result;
 

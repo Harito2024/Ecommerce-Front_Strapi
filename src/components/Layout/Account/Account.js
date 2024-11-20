@@ -6,8 +6,8 @@ import classNames from "classnames";
 
 export function Account() {
   const { user } = useAuth();
-  const router = useRouter();
   const { total } = useCart();
+  const router = useRouter();
 
   const goToLogin = () => router.push("/join/sing-in");
   const goToAccount = () => router.push("/account");

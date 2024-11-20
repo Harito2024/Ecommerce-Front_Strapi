@@ -5,6 +5,7 @@ import { useAuth } from "@/hooks";
 
 export function Info() {
   const { user } = useAuth();
+  console.log(user);
 
   return (
     <div className={styles.info}>

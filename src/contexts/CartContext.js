@@ -13,6 +13,7 @@ export function CartProvider(props) {
   useEffect(() => {
     const response = cartCtrol.getAll();
     setCart(response);
+    console.log(response);
   }, []);
 
   const addCart = (gameId) => {

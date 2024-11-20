@@ -6,6 +6,8 @@ export async function getServerSideProps(context) {
     params: { game },
   } = context;
 
+  console.log(game);
+
   const gameCtrl = new Game();
   const response = await gameCtrl.getBySlug(game);
 

@@ -11,7 +11,7 @@ export default function SingInPage() {
       <JoinLayout>
         <div className={styles.singIn}>
           <h3>Iniciar Sesion</h3>
-          <LoginForm></LoginForm>
+          <LoginForm />
           <div className={styles.actions}>
             <Link href="/join/sing-up">Aun no tienes cuenta activa</Link>
           </div>

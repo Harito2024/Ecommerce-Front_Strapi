@@ -10,6 +10,7 @@ import { Platform } from "@/api";
 const platformsCtrl = new Platform();
 
 export function Menu(props) {
+  const urlStrapi = "http://localhost:1337";
   const { isOpenSearch } = props;
   const [platforms, setPlatforms] = useState(null);
   const [showSearch, setShowSearch] = useState(isOpenSearch);

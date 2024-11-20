@@ -3,6 +3,8 @@ import { Home } from "@/components/Home";
 import { Separator, BarTrust, BannerAd, Seo } from "@/components/Shared";
 import { Container } from "semantic-ui-react";
 
+import { useCart } from "@/hooks";
+
 const platfomrId = {
   playstation: 1,
   xbox: 3,

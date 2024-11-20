@@ -4,30 +4,29 @@ import { Separator } from "@/components/Shared";
 import { Seo } from "@/components/Shared";
 export default function GamePage(props) {
   const { game } = props;
-  const games = game.data[0];
+  const games = game;
 
   const wallpaper = games.attributes.wallpaper;
   const urlStrapi2 = "https://ecommerce-backstrapi.up.railway.app";
   const urlStrapi = "http://localhost:1337";
-  const wallpaperUrl = `${urlStrapi2}${wallpaper.data.attributes.url}`;
-  const screenshots = `${urlStrapi2}${games.attributes.screenshots.data}`;
+  const wallpaperUrl = `${urlStrapi}${wallpaper.data.attributes.url}`;
+  const screenshots = game.attributes.screenshots.data;
 
   return (
     <>
-      <Seo
-        title={games.attributes.title}
-        description={games.attributes.summary}
-      />
       <BasicLayout>
         <Game.HeaderWallpaper image={wallpaperUrl} />
-        <Game.Panel gameId={games.id} game={games.attributes} />
-        <Separator height={50} />
+        <Game.Panel gameId={game.id} game={game.attributes} />
 
-        <Game.Info game={games.attributes} />
-        <Separator height={30} />
+        <Separator heigth={50} />
 
-        <Game.Media video={games.attributes.video} screenshots={screenshots} />
-        <Separator height={50} />
+        <Game.Info game={game.attributes} />
+
+        <Separator heigth={30} />
+
+        <Game.Media video={game.attributes.video} screenshots={screenshots} />
+
+        <Separator heigth={50} />
       </BasicLayout>
     </>
   );

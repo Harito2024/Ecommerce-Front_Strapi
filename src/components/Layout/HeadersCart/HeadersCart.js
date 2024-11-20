@@ -17,6 +17,7 @@ export function HeadersCart() {
     { number: 2, title: "Pago" },
     { number: 3, title: "Confirmacion de Pago" },
   ];
+
   return (
     <div className={styles.headerCart}>
       <div className={styles.left}>
